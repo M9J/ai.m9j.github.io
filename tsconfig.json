@@ -1,21 +1,16 @@
 {
   "compilerOptions": {
-    "module": "esnext", // Allows ES Modules and top-level 'await'
-    "target": "es2017", // Use ES2017+ features
-    "moduleResolution": "node", // Node.js module resolution
+    "module": "ESNext", // Use modern ES Modules
+    "target": "ES2017", // Target modern JavaScript
+    "moduleResolution": "node", // Resolve modules in Node.js style
+    "esModuleInterop": true, // Ensure CommonJS compatibility
+    "resolveJsonModule": true, // Allow importing JSON files
+    "outDir": "./compiled", // Output directory for compiled files
+    "rootDir": "./src", // Define the root for input files
     "strict": true, // Enable strict type-checking
-    "esModuleInterop": true, // Ensure compatibility with CommonJS modules
-    "skipLibCheck": true, // Skip library type-checking
-    "resolveJsonModule": true, // Support importing JSON
-    "outDir": "./compiled", // Output for compiled .js files
-    "rootDir": "./src" // Root directory for sources
+    "skipLibCheck": true, // Skip type-checking libraries
+    "allowSyntheticDefaultImports": true // Support for default imports in ESM
   },
-  "include": [
-    "./src/**/*" // Include source files in the src folder
-  ],
-  "exclude": [
-    "./node_modules", // Avoid dependencies
-    "./dist", // Avoid compiled outputs
-    "src/dataset/**/*" // Exclude dataset files from being compiled
-  ]
+  "include": ["./src/**/*"],
+  "exclude": ["./node_modules", "./dist"]
 }

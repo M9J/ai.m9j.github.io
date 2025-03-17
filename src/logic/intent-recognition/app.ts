@@ -1,10 +1,10 @@
 import * as use from "@tensorflow-models/universal-sentence-encoder";
 import * as tf from "@tensorflow/tfjs-node";
 import * as fs from "fs";
-import DATA from "../../dataset/intent-recognition/data";
-import DATA_TRAINING from "../../dataset/intent-recognition/training";
+import DATA from "../../dataset/intent-recognition/data.js";
+import DATA_TRAINING from "../../dataset/intent-recognition/training.js";
 
-const modelSavePath = "./dist/models/intent-recognition/0.1/";
+const modelSavePath = "./dist/models/intent-recognition/0.2/";
 
 // Check if the directory exists
 if (!fs.existsSync(modelSavePath)) {
@@ -53,7 +53,7 @@ console.log("Model compiled.");
 
 // Train the model and show progress
 await model.fit(xs, ys, {
-  epochs: 100, // Total number of iterations over the dataset
+  epochs: 500, // Total number of iterations over the dataset
   callbacks: {
     // Called at the end of every batch
     onBatchEnd: async (batch: number, logs: any) => {
@@ -89,3 +89,16 @@ console.log(`\nModel saved`);
 // Map predicted index back to intent
 const intentLabels = Object.keys(intents); // ['greeting', 'goodbye', 'thanks']
 console.log(`\nPredicted intent: ${intentLabels[predictedIndex]}`);
+
+const labelIndex = Object.keys(intents);
+// Convert the labels object to JSON format
+const jsonData = JSON.stringify(labelIndex, null, 2); // `null, 2` adds formatting for readability
+
+// Write the JSON data to a file
+fs.writeFile(`${modelSavePath}/labels.json`, jsonData, (err) => {
+  if (err) {
+    console.error("Error writing file:", err);
+  } else {
+    console.log("Labels has been written successfully to labels.json");
+  }
+});

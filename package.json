@@ -10,7 +10,8 @@
     "tsc": "npx tsc",
     "test": "echo \"Error: no test specified\" && exit 1",
     "run-intent": "node ./compiled/logic/intent-recognition/app.js",
-    "intent": "npm run cleanup && npm run tsc && npm run run-intent"
+    "intent": "npm run cleanup && npm run tsc && npm run run-intent",
+    "intent-tester": "node ./compiled/logic/intent-recognition/tester.js"
   },
   "keywords": [],
   "author": "",
