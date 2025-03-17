@@ -1,15 +1,21 @@
 {
   "compilerOptions": {
     "module": "esnext", // Allows ES Modules and top-level 'await'
-    "target": "es2017", // Must be 'es2017' or higher
-    "moduleResolution": "node", // Resolves modules in Node.js style
-    "strict": true, // (Optional) Enables strict type-checking
-    "esModuleInterop": true, // (Optional) Allows compatibility with CommonJS modules
-    "skipLibCheck": true,
-    "resolveJsonModule": true,
-    "outDir": "./compiled", // Output directory for compiled files
-    "rootDir": "./src" // Input source directory
+    "target": "es2017", // Use ES2017+ features
+    "moduleResolution": "node", // Node.js module resolution
+    "strict": true, // Enable strict type-checking
+    "esModuleInterop": true, // Ensure compatibility with CommonJS modules
+    "skipLibCheck": true, // Skip library type-checking
+    "resolveJsonModule": true, // Support importing JSON
+    "outDir": "./compiled", // Output for compiled .js files
+    "rootDir": "./src" // Root directory for sources
   },
-  "include": ["src/**/*"], // Include all .ts files in the 'src' folder and subfolders
-  "exclude": ["node_modules", "dist"] // Exclude certain folders
+  "include": [
+    "./src/**/*" // Include source files in the src folder
+  ],
+  "exclude": [
+    "./node_modules", // Avoid dependencies
+    "./dist", // Avoid compiled outputs
+    "./dataset/**/*" // Exclude dataset files from being compiled
+  ]
 }

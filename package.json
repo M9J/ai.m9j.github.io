@@ -4,11 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "cleanup": "rimraf ./dist ./compiled",
     "clear": "clear",
     "cls": "cls",
     "tsc": "npx tsc",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "intent": "npm run tsc && node ./compiled/intent-recognition/app.js"
+    "intent": "npm run cleanup && npm run tsc && node ./compiled/intent-recognition/app.js"
   },
   "keywords": [],
   "author": "",
@@ -21,6 +22,7 @@
     "@tensorflow/tfjs-node": "^4.22.0"
   },
   "devDependencies": {
+    "rimraf": "^5.0.10",
     "typescript": "^5.8.2"
   }
 }

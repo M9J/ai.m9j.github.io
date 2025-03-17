@@ -1,8 +1,8 @@
 import * as use from "@tensorflow-models/universal-sentence-encoder";
 import * as tf from "@tensorflow/tfjs-node";
 import * as fs from "fs";
-import DATA_INTENTS from "../../dataset/intent-recognition/intents.json" assert { type: "json" };
-import DATA_TRAINING from "../../dataset/intent-recognition/trainingData.json" assert { type: "json" };
+import DATA from "../../dataset/intent-recognition/data";
+import DATA_TRAINING from "../../dataset/intent-recognition/training";
 
 const modelSavePath = "./dist/models/intent-recognition/0.1/";
 
@@ -14,7 +14,7 @@ if (!fs.existsSync(modelSavePath)) {
 
 console.log("ai.m9j.github.io - Intent Recognition");
 
-const intents = DATA_INTENTS;
+const intents = DATA;
 
 // Initialize the Universal Sentence Encoder
 console.log("Loading USE...");
