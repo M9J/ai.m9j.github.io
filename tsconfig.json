@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "module": "esnext", // Allows ES Modules and top-level 'await'
+    "target": "es2017", // Must be 'es2017' or higher
+    "moduleResolution": "node", // Resolves modules in Node.js style
+    "strict": true, // (Optional) Enables strict type-checking
+    "esModuleInterop": true, // (Optional) Allows compatibility with CommonJS modules
+    "skipLibCheck": true,
+    "resolveJsonModule": true,
+    "outDir": "./compiled", // Output directory for compiled files
+    "rootDir": "./src" // Input source directory
+  },
+  "include": ["src/**/*"], // Include all .ts files in the 'src' folder and subfolders
+  "exclude": ["node_modules", "dist"] // Exclude certain folders
+}
