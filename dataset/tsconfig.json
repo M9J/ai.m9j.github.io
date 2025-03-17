@@ -1,8 +1,0 @@
-{
-  "compilerOptions": {
-    "noEmit": true, // Prevent generating .js files
-    "strict": true, // Enforce strict type-checking
-    "resolveJsonModule": true // Allow JSON imports
-  },
-  "include": ["./**/*.ts"]
-}

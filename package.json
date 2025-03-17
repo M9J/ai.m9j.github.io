@@ -9,7 +9,8 @@
     "cls": "cls",
     "tsc": "npx tsc",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "intent": "npm run cleanup && npm run tsc && node ./compiled/intent-recognition/app.js"
+    "run-intent": "node ./compiled/logic/intent-recognition/app.js",
+    "intent": "npm run cleanup && npm run tsc && npm run run-intent"
   },
   "keywords": [],
   "author": "",

@@ -16,6 +16,6 @@
   "exclude": [
     "./node_modules", // Avoid dependencies
     "./dist", // Avoid compiled outputs
-    "./dataset/**/*" // Exclude dataset files from being compiled
+    "src/dataset/**/*" // Exclude dataset files from being compiled
   ]
 }
