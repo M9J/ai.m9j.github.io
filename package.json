@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "cleanup": "rimraf ./dist ./compiled",
+    "cleanup": "rimraf ./compiled",
     "clear": "clear",
     "cls": "cls",
     "tsc": "npx tsc",
