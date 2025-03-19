@@ -4,14 +4,16 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "cleanup": "rimraf ./compiled",
+    "test": "echo \"Error: no test specified\" && exit 1",
     "clear": "clear",
     "cls": "cls",
     "tsc": "npx tsc",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "run-intent": "node ./compiled/logic/intent-recognition/app.js",
-    "intent": "npm run cleanup && npm run tsc && npm run run-intent",
-    "intent-tester": "node ./compiled/logic/intent-recognition/tester.js"
+    "cleanup": "rimraf ./compiled",
+    "cleanup-all": "npm run cleanup && rimraf ./dist",
+    "intent-trainer": "node ./compiled/logic/intent-recognition/trainer.js",
+    "intent-tester": "node ./compiled/logic/intent-recognition/tester.js",
+    "intent-validator": "node ./compiled/logic/intent-recognition/validator.js",
+    "toolset-cache": "node ./compiled/toolset/cache-toolset.js"
   },
   "keywords": [],
   "author": "",
